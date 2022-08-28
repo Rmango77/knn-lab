@@ -104,7 +104,7 @@ st.markdown("<h6 style='text-align: center; color: black;'>Построение 
 
 st.write("""Посмотрим как при помощи метода k-ближайших соседей найти k наиболее похожих фильмов""")
 
-credits = pd.read_csv("/Users/eugeny/Downloads/archive/tmdb_5000_credits.csv")
+#credits = pd.read_csv("tmdb_5000_credits.csv")
 movies = pd.read_csv("movie.csv")
 
 st.dataframe(movies.drop(['Жанр', 'Ключевые слова'], axis=1).head())
@@ -129,8 +129,8 @@ input_film = st.text_input(label="Введите название фильма")
 if input_film not in movies['Оригинальное название'].values:
     st.write("""Такого фильма нет в каталоге. Проверьте правильность написания.""")
 elif input_film != "":
-    credits.columns = ['Номер фильма', 'title', 'cast', 'crew']
-    movies = movies.merge(credits, on='Номер фильма')
+    #credits.columns = ['Номер фильма', 'title', 'cast', 'crew']
+    #movies = movies.merge(credits, on='Номер фильма')
 
     movies['Описание'] = movies['Описание'].fillna('')
 
